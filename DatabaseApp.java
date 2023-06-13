@@ -66,7 +66,7 @@ public class DatabaseApp {
             dbConnection.close();
 
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
     }
 
