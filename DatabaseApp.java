@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.*;
 
 public class DatabaseApp {
 
@@ -7,7 +8,7 @@ public class DatabaseApp {
         // driverName
         String driverName = "com.mysql.jbdc.Driver";
 
-        // dbAddress
+        // dbAddress assumes mysql is running on localhost at port 3306
         String dbAddress = "jdbc:mysql://localhost:3306/";
 
         // dBName
@@ -67,7 +68,16 @@ public class DatabaseApp {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            System.out.println("Connection closed");
         }
+
+        // List of strings
+        List<String> list = new ArrayList<String>();
+        list.add("Hello");
+        list.add("World");
+        list.add("!");
+        
     }
 
 }
