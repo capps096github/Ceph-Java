@@ -14,10 +14,11 @@ public class Person implements Externalizable {
     }
 
     // constructor
-    public Person(String name, int age, double salary) {
+    public Person(String name, int age, double salary, int regNo) {
         this.age = age;
         this.name = name;
         this.salary = salary;
+        this.regNo = regNo;
     }
 
     public void writeExternal(ObjectOutput out) throws IOException {
@@ -30,7 +31,8 @@ public class Person implements Externalizable {
 
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
         // read
-        name = (String) in.readObject();
+        // name = (String) in.readObject();
+        this.name = (String) in.readObject();
         age = in.readInt();
         regNo = in.readInt();
         salary = in.readDouble();

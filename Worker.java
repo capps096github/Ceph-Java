@@ -4,7 +4,7 @@ public class Worker {
 
     public static void main(String[] args) {
         // worker object
-        Person person = new Person("james", 20, 1000.0);
+        Person person = new Person("james", 20, 1000.0,11111);
         // file name
         String fileName = "person.txt";
 

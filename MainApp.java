@@ -8,6 +8,7 @@ public class MainApp {
         // Static Nested Class
         OuterClass.StaticNestedClass staticNested = new OuterClass.StaticNestedClass();
         staticNested.nestedMethod();
+        OuterClass.StaticNestedClass.nestedMethodx();
 
         // Local Class
         outer.outerMethod();
@@ -27,7 +28,7 @@ interface MyInterface {
 }
 
 class OuterClass {
-    private int outerField;
+    private static int outerField;
 
     public void outerMethod() {
         final int localVar = 10;
@@ -38,6 +39,9 @@ class OuterClass {
                 System.out.println("Local variable: " + localVar); // Accessing local variable
             }
         }
+
+        StaticNestedClass staticNested = new StaticNestedClass();
+        staticNested.nestedMethod();
 
         LocalClass local = new LocalClass();
         local.localMethod();
@@ -56,7 +60,12 @@ class OuterClass {
         private int nestedField;
 
         public void nestedMethod() {
-            System.out.println("Nested method");
+            System.out.println("Nested method" + outerField);
+        }
+
+        // static method
+        public static void nestedMethodx() {
+            System.out.println("Nested method" + outerField);
         }
     }
 }
